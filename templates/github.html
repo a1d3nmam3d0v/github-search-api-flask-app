@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+
+<header>
+    <h1><span style="font-weight: 300">GitHub user:</span> {{ user_info.login }}</h1>
+</header>
+
+<p>Name: {{ user_info.name }}</p>
+<p>Public repositories: {{ user_info.repos }}</p>
+
+<p><a href="{{ user_info.home_page }}">View repositories</a></p>
+<br />
+<p>
+    <img src="{{ user_info.avatar_url }}" />
+</p>
+<br />
+
+<a href="/">Back to search</a> | <a href="https://github.com">Github.com</a>
+
+{% endblock %}

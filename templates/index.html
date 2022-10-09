@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub API App</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "base.html" %} {% block content %}
+<header>
+    <h1>GitHub <span style="font-weight: 500">User Search</span></h1>
+</header>
 
-    <h1>TODO - complete this page</h1>
-    
-</body>
-</html>
+<main>
+    <div style="height: 30px">
+        <p>Look up a user's profile information using GitHub's Search API.</p>
+    </div>
+
+    <form method="GET" action="get_user">
+        <label>github.com/</label>
+        <input name="username" placeholder="username" />
+        <button type="submit">Find</button>
+    </form>
+</main>
+<footer>[ <a href="https://github.com/">GitHub </a> | <a href="https://docs.github.com/en/rest/search"> Search API</a> ]</footer>
+
+{% endblock %}
